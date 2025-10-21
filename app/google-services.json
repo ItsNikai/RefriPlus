@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "813375896107",
+    "project_id": "refriplus-f782c",
+    "storage_bucket": "refriplus-f782c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813375896107:android:242a6eb4ddb0fc2b08886e",
+        "android_client_info": {
+          "package_name": "cat.institutmarianao.refriplus"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0QmJw0mkxi_cBLcfo08IQneUaQQjXF4o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
