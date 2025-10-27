@@ -3,4 +3,5 @@
 
     <string name="login_dialog_hint_email">Email</string>
     <string name="login_dialog_hint_password">Password</string>
+    <string name="login_dialog_hint_confirm_password">Confirm Password</string>
 </resources>

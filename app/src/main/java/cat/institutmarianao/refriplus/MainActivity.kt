@@ -1,5 +1,6 @@
 package cat.institutmarianao.refriplus
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
@@ -13,10 +14,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val emailLayout = findViewById<TextInputLayout>(R.id.emailLayout)
-        val emailText = findViewById<TextInputEditText>(R.id.emailLayout)
         val passwordLayout = findViewById<TextInputLayout>(R.id.passwordLayout)
-        val passwordText = findViewById<TextInputEditText>(R.id.passwordLayout)
+        val emailText = findViewById<TextInputEditText>(R.id.email)
+        val passwordText = findViewById<TextInputEditText>(R.id.password)
         val loginButton = findViewById<Button>(R.id.login)
+        val goSingUp = findViewById<Button>(R.id.singUp)
 
 
         loginButton.setOnClickListener {
@@ -28,6 +30,11 @@ class MainActivity : AppCompatActivity() {
             if (passwordText.text.isNullOrEmpty()) {
                 passwordLayout.error = "Password is required"
             }
+        }
+
+        goSingUp.setOnClickListener {
+            val intent = Intent(this, SignUp::class.java)
+            startActivity(intent)
         }
 
     }
