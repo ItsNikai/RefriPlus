@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RefriPlus">
         <activity
+            android:name=".ClientsActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUp"
             android:exported="false" />
         <activity
