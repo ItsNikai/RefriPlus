@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
-
 class MainActivity : AppCompatActivity() {
     private lateinit var errorText: TextView
 
@@ -76,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                         "Welcome ${FirebaseAuth.getInstance().currentUser?.email}",
                         Toast.LENGTH_SHORT
                     ).show()
-                    val clientsActivity = Intent(this, ClientsActivity::class.java)
+                    val clientsActivity = Intent(this, AIFridge::class.java)
                     startActivity(clientsActivity)
                 } else {
                     val errorMessage = task.exception?.message ?: "An unknown error occurred."

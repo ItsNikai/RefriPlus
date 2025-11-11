@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RefriPlus">
         <activity
-            android:name=".ClientsActivity"
+            android:name=".AIFridge"
             android:exported="false" />
         <activity
             android:name=".SignUp"
