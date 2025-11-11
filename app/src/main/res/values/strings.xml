@@ -4,4 +4,10 @@
     <string name="login_dialog_hint_email">Email</string>
     <string name="login_dialog_hint_password">Password</string>
     <string name="login_dialog_hint_confirm_password">Confirm Password</string>
+
+    <string name="new_ingredient_hint">Ingredient name (e.g., Chicken Breast)</string>
+    <string name="quantity_hint">Quantity (e.g., 1)</string>
+    <string name="expiration_hint">Expiration...</string>
+
+
 </resources>
