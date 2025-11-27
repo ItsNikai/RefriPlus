@@ -118,8 +118,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Clear"
-            android:background="@drawable/button_border"
             android:textColor="?attr/colorPrimary"
+            android:background="@drawable/button_border"
+            app:backgroundTint="@null"
             android:padding="12dp"
             android:textStyle="bold" />
     </LinearLayout>
