@@ -101,7 +101,6 @@
         android:layout_marginBottom="16dp"
         android:gap="12dp">
 
-        <!-- Botón morado con texto blanco -->
         <Button
             android:id="@+id/btnAddIngredient"
             android:layout_width="0dp"
@@ -113,7 +112,6 @@
             android:padding="12dp"
             android:textStyle="bold" />
 
-        <!-- Botón con fondo blanco, borde y texto del color primario -->
         <Button
             android:id="@+id/btnClear"
             android:layout_width="0dp"
@@ -125,6 +123,11 @@
             android:padding="12dp"
             android:textStyle="bold" />
     </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ingredientsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 
 </LinearLayout>

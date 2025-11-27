@@ -20,10 +20,11 @@ class AIFridge : AppCompatActivity() {
         // Set the toolbar as the action bar for the activity
         setSupportActionBar(toolbar)
 
+        // TODO create the list of ingredients on the db on firebase
+
     }
 
     // method to inflate the toolbar menu
-    // android does it by default
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true

@@ -7,7 +7,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
-// import FirebaseAuthentication
 import com.google.firebase.auth.FirebaseAuth
 
 class SignUp : AppCompatActivity() {
