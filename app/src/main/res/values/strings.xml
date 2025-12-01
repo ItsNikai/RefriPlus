@@ -7,7 +7,13 @@
 
     <string name="new_ingredient_hint">Ingredient name (e.g., Chicken Breast)</string>
     <string name="quantity_hint">Quantity (e.g., 1)</string>
-    <string name="expiration_hint">Expiration...</string>
+    <string name="expiration_hint">Expiration…</string>
+
+    <!-- item_ingredient.xml -->
+    <string name="item_ingredient_accessibility_delete_button">Delete ingredient</string>
+    <string name="item_ingredient_preview_name">Zanahoiria</string>
+    <string name="item_ingredient_preview_quantity">3</string>
+    <string name="item_ingredient_preview_expiration_date">30.10.2024</string>
 
 
 </resources>

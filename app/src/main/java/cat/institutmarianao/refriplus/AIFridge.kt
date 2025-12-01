@@ -24,13 +24,17 @@ class AIFridge : AppCompatActivity() {
 
     }
 
-    // method to inflate the toolbar menu
+    /**
+     * Inflate the menu items for use in the action bar
+     */
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
 
-    // Method called all the time the user clicks on an item in the toolbar
+    /**
+     * Handle action bar item clicks
+     */
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         // Checks which item was clicked
         return when (item.itemId) {

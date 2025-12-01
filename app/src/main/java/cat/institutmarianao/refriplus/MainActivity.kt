@@ -52,6 +52,9 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /**
+     * Login form
+     */
     private fun loginForm(emailEditText: EditText, passwordEditText: EditText) {
         val email = emailEditText.text.toString().trim()
         val password = passwordEditText.text.toString().trim()
@@ -59,6 +62,9 @@ class MainActivity : AppCompatActivity() {
         login(email, password)
     }
 
+    /**
+     * Login function
+     */
     private fun login(email: String, password: String) {
         if (email.isEmpty() || password.isEmpty()) {
             Toast.makeText(
