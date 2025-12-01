@@ -12,6 +12,8 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 class MainActivity : AppCompatActivity() {
     private lateinit var errorText: TextView
+    private lateinit var emailText: TextInputEditText
+    private lateinit var passwordText: TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,30 +21,19 @@ class MainActivity : AppCompatActivity() {
 
         // TODO Chek the code to avoid spaghetti code (Important)
 
-        val emailLayout = findViewById<TextInputLayout>(R.id.emailLayout)
-        val passwordLayout = findViewById<TextInputLayout>(R.id.passwordLayout)
-        val emailText = findViewById<TextInputEditText>(R.id.email)
-        val passwordText = findViewById<TextInputEditText>(R.id.password)
         val loginButton = findViewById<Button>(R.id.login)
         val goSingUp = findViewById<Button>(R.id.singUp)
 
         errorText = findViewById(R.id.errorText)
 
         loginButton.setOnClickListener {
+            emailText = findViewById(R.id.email)
+            passwordText = findViewById(R.id.password)
 
-            val email = emailText.text
-            val password = passwordText.text
-
-            if (emailText.text.isNullOrEmpty()) {
-                emailLayout.error = "Email is required"
+            // Check if the form is not empty and do the login
+            if (checkForm(emailText, passwordText)) {
+                loginForm(emailText, passwordText)
             }
-
-            if (passwordText.text.isNullOrEmpty()) {
-                passwordLayout.error = "Password is required"
-            }
-
-            loginForm(emailText, passwordText)
-
         }
 
         goSingUp.setOnClickListener {
@@ -53,7 +44,35 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Check if the form is not empty
+     *
+     * @param emailEditText
+     * @param passwordEditText
+     * @return true if the form is not empty, false otherwise
+     */
+    private fun checkForm(emailEditText: EditText, passwordEditText: EditText): Boolean {
+        val emailLayout = findViewById<TextInputLayout>(R.id.emailLayout)
+        val passwordLayout = findViewById<TextInputLayout>(R.id.passwordLayout)
+
+        if (emailText.text.isNullOrEmpty()) {
+            emailLayout.error = "Email is required"
+            return false
+        }
+
+        if (passwordText.text.isNullOrEmpty()) {
+            passwordLayout.error = "Password is required"
+            return false
+        }
+
+        return true
+    }
+
+
+    /**
      * Login form
+     *
+     * @param emailEditText
+     * @param passwordEditText
      */
     private fun loginForm(emailEditText: EditText, passwordEditText: EditText) {
         val email = emailEditText.text.toString().trim()
@@ -64,15 +83,12 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Login function
+     *
+     * @param email
+     * @param password
      */
     private fun login(email: String, password: String) {
-        if (email.isEmpty() || password.isEmpty()) {
-            Toast.makeText(
-                this, "Email and password required", Toast.LENGTH_SHORT
-            ).show()
-            return
-        }
-
+        // Don't need to check the form because it is already checked before calling this function
         // * Firebase login * //
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
@@ -86,7 +102,11 @@ class MainActivity : AppCompatActivity() {
                     startActivity(clientsActivity)
                 } else {
                     val errorMessage = task.exception?.message ?: "An unknown error occurred."
-                    Toast.makeText(this, "Error: $errorMessage", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        this,
+                        "Error: $errorMessage",
+                        Toast.LENGTH_SHORT
+                    ).show()
 
                     // NUEVO: Muestra el error en el TextView
                     errorText.text = errorMessage
