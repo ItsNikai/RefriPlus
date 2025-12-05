@@ -8,6 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
 
 class AIFridge : AppCompatActivity() {
@@ -20,7 +21,15 @@ class AIFridge : AppCompatActivity() {
         // Set the toolbar as the action bar for the activity
         setSupportActionBar(toolbar)
 
+        val ingredientName= findViewById<TextInputEditText>(R.id.newIngredient)
+        val quantity= findViewById<TextInputEditText>(R.id.quantity)
+
+        val btnAddIngredient: Button = findViewById(R.id.btnAddIngredient)
+        val btnClear: Button = findViewById(R.id.btnClear)
+
         // TODO create the list of ingredients on the db on firebase
+
+        // TODO fill the spinners
 
     }
 

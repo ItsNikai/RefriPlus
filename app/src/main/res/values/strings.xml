@@ -15,5 +15,28 @@
     <string name="item_ingredient_preview_quantity">3</string>
     <string name="item_ingredient_preview_expiration_date">30.10.2024</string>
 
+    <!-- activity_ai_fridge.xml -->
+    <!-- Spinners -->
+    <string-array name="units">
+        <item>Units</item>
+        <item>grams</item>
+        <item>kg</item>
+        <item>liters</item>
+        <item>ml</item>
+        <item>packs</item>
+    </string-array>
+    
+    <string-array name="category">
+        <item>Fruits &amp; Vegs</item>
+        <item>Meat &amp; Fish</item>
+        <item>Dairy &amp; Eggs</item>
+        <item>Bakery &amp; Bread</item>
+        <item>Grains &amp; Pasta</item>
+        <item>Sauces &amp; Condiments</item>
+        <item>Drinks</item>
+        <item>Leftovers</item>
+        <item>Other</item>
+    </string-array>
+
 
 </resources>
